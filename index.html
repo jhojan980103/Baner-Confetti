@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Estilos -->
+    <link rel="stylesheet" href="/styles.css">
+    <title>Confetti</title>
+</head>
+<body>
+    <section>
+        <h2>Video Solicitado</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo assumenda ipsam ex! Eaque nemo vel ullam minima voluptates mollitia suscipit harum doloremque provident. Suscipit, dolorum facere minus id inventore voluptatum!</p>
+        <button class="btn">Haga Clic Aquí</button>
+        
+        <div class="popup">
+            <h2>Tu Contenido Va Aquí</h2>
+            <b class="close">x</b>
+        </div>
+    </section>
+
+    
+
+    <canvas id="my-canvas"></canvas>
+
+    <script src="index.min.js"></script>
+
+    <script>
+        let btn = document.querySelector('.btn');
+        let popup = document.querySelector('.popup');
+        let close = document.querySelector('.close');
+        let confe = document.querySelector('#my-canvas');
+        btn.onclick = function(){
+            popup.classList.add('active');
+            confe.classList.add('active');
+        }
+        close.onclick = function(){
+            popup.classList.remove('active');
+            confe.classList.remove('active');
+        }
+
+        var confettiSettings = { target: 'my-canvas'};
+        var confetti = new ConfettiGenerator(confettiSettings);
+        confetti.render();
+    </script>
+</body>
+</html>
